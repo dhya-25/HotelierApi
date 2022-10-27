@@ -1,0 +1,151 @@
+<h1 mat-dialog-title>Ajout Facture</h1>
+<div mat-dialog-content>
+    <form [formGroup]="factForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>numFactInd</mat-label>
+            <input  formControlName="numFactInd" matInput type="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>commentaire</mat-label>
+            <input formControlName="commentaire" matInput >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>mntHtax</mat-label>
+            <input formControlName="mntHtax" matInput type="number">
+          </mat-form-field></td>
+        
+    
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>mntHtva</mat-label>
+            <input formControlName="mntHtva" matInput type="number" >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>mnttva</mat-label>
+            <input formControlName="mnttva" matInput type="number">
+          </mat-form-field></td>
+          <td>
+           
+
+        </tr>
+
+        <tr>
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>mntFdcst</mat-label>
+              <input  formControlName="mntFdcst" matInput type="number">
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>tbreFiscal</mat-label>
+              <input formControlName="tbreFiscal" matInput type="number">
+            </mat-form-field></td>
+            <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateArr</mat-label>
+                    <input formControlName="dateArr" matInput [matDatepicker]="picker">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+          
+              <td>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateDep</mat-label>
+                    <input formControlName="dateDep" matInput [matDatepicker]="pickeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeer></mat-datepicker>
+                  </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateFacture</mat-label>
+                    <input formControlName="dateFacture" matInput [matDatepicker]="pickeevr">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeevr"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeevr></mat-datepicker>
+                  </mat-form-field>
+              </td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>mntTtc</mat-label>
+              <input formControlName="mntTtc" matInput type="number">
+            </mat-form-field></td>
+  
+
+             
+  
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>mntTtlettre</mat-label>
+              <input formControlName="mntTtlettre" matInput>
+            </mat-form-field></td>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>promotion</mat-label>
+              <input formControlName="promotion" matInput >
+            </mat-form-field>
+          </td>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>nbrGratuit</mat-label>
+                    <input formControlName="nbrGratuit" matInput type="number">
+                  </mat-form-field></td>
+                  
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>typePaiment</mat-label>
+              <input  formControlName="typePaiment" matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>nomClient</mat-label>
+              <input formControlName="nomClient" matInput>
+            </mat-form-field></td>
+            
+      
+
+  
+           
+  
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>typeFacture</mat-label>
+              <input formControlName="typeFacture" matInput >
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codHotel</mat-label>
+              <input  formControlName="codHotel" matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codAgence</mat-label>
+              <input formControlName="codAgence" matInput>
+            </mat-form-field></td>
+
+          
+      
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codResid</mat-label>
+              <input formControlName="codResid" matInput type="number">
+            </mat-form-field></td>
+  
+            
+          </tr>
+     
+    </table>
+      </form>
+      
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addFacture()" >Save</button>
+
+
+</div>

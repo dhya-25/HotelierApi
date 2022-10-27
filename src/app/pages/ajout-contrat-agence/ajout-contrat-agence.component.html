@@ -1,0 +1,73 @@
+<h1 mat-dialog-title> {{nomDial}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="contartAgenceForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id Agence</mat-label>
+            <input  formControlName="idContartAgence" matInput="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Tarif</mat-label>
+            <input formControlName="codeTarif" matInput>
+          </mat-form-field></td>
+
+          <td><p>
+            <mat-form-field appearance="outline">
+                <mat-label>Date Contrat</mat-label>
+                <input formControlName="dateContrat" matInput [matDatepicker]="picker">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          </p></td>
+    
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>cpdePeriode</mat-label>
+            <input formControlName="cpdePeriode" matInput type="number">
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code réduction</mat-label>
+            <input formControlName="codeReduction" matInput>
+          </mat-form-field></td>
+          <td>
+           
+
+        </tr>
+
+
+       <tr>
+           
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Code Supplement</mat-label>
+        <input formControlName="codeSupplement" matInput>
+      </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Prix Réduction</mat-label>
+            <input formControlName="prixReduction" matInput type="number" >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Prix Arrangement</mat-label>
+            <input formControlName="prixArragement" matInput type="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Valeur Supplementaire</mat-label>
+            <input formControlName="valeurSupp" matInput type="number" >
+           
+          </mat-form-field></td>
+
+          
+    
+    </table>
+      </form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addContratAgence()" >{{actionBtn}}</button>
+
+
+</div>

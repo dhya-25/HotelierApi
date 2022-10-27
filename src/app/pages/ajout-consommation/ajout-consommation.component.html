@@ -1,0 +1,192 @@
+<h1 mat-dialog-title>Ajout Consommation</h1>
+<div mat-dialog-content>
+    <form [formGroup]="consoForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>mntConso</mat-label>
+            <input  formControlName="mntConso" matInput type="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>codCons</mat-label>
+            <input formControlName="codCons" matInput type="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>codResid</mat-label>
+            <input formControlName="codResid" matInput type="number">
+          </mat-form-field></td>
+        
+    
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Hotel</mat-label>
+            <input formControlName="codHotel" matInput >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>codPrestation</mat-label>
+            <input formControlName="codPrestation" matInput>
+          </mat-form-field></td>
+          <td>
+           
+
+        </tr>
+
+        <tr>
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codUser</mat-label>
+              <input  formControlName="codUser" matInput type="number">
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codAgence</mat-label>
+              <input formControlName="codAgence" matInput>
+            </mat-form-field></td>
+            <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateConso</mat-label>
+                    <input formControlName="dateConso" matInput [matDatepicker]="picker">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+          
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateSys</mat-label>
+                    <input formControlName="dateSys" matInput [matDatepicker]="pickeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeer></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>heureConso</mat-label>
+              <input formControlName="heureConso" matInput >
+            </mat-form-field></td>
+  
+
+             
+  
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>numBon</mat-label>
+              <input formControlName="numBon" matInput>
+            </mat-form-field></td>
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>numFactInd</mat-label>
+              <input formControlName="numFactInd" matInput type="number">
+            </mat-form-field>
+          </td>
+            <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>numFactDeb</mat-label>
+                    <input formControlName="numFactDeb" matInput type="number">
+                  </mat-form-field></td>
+                  
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>typeConso</mat-label>
+              <input  formControlName="typeConso" matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>offre</mat-label>
+              <input formControlName="offre" matInput>
+            </mat-form-field></td>
+            
+      
+
+  
+           
+  
+          </tr>
+          <tr>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>typeClient</mat-label>
+              <input formControlName="typeClient" matInput >
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>forfait</mat-label>
+              <input  formControlName="forfait" matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>codeDev</mat-label>
+              <input formControlName="codeDev" matInput>
+            </mat-form-field></td>
+
+          
+      
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>tauxDev</mat-label>
+              <input formControlName="tauxDev" matInput type="number">
+            </mat-form-field></td>
+  
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>unite</mat-label>
+              <input formControlName="unite" matInput type="number">
+            </mat-form-field></td>
+            <!-- <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>prestation</mat-label>
+              <input formControlName="prestation" matInput type="number">
+            </mat-form-field></td> -->
+             
+          </tr>
+      <tr>
+        <div formGroupName="prestation">
+          <div class="form-group">
+           <td>
+               <select name="Arrangement" class="form-control" formControlName="idPrestation">
+                 <option value=""> Prestation </option>
+                 <option *ngFor="let i of prestations" value="{{i.idPrestation}}"> {{i.cod_prestation}}</option>
+             
+               </select>
+             </td>
+           </div>
+           </div>
+           <td>
+           <div formGroupName="facture">
+             <div class="form-group">
+              <td>
+                  <select name="Arrangement" class="form-control" formControlName="idFacture">
+                    <option value=""> facture</option>
+                    <option *ngFor="let i of factures" value="{{i.idFacture}}"> {{i.numFactInd}}</option>
+                
+                  </select>
+                </td>
+
+              </div>
+              </div>
+              <td>
+              <div formGroupName="resident">
+                <div class="form-group">
+                 <td>
+                     <select name="Arrangement" class="form-control" formControlName="id_Resident">
+                       <option value=""> Resident</option>
+                       <option *ngFor="let i of resident" value="{{i.id_Resident}}"> {{i.nom_resid}}</option>
+                   
+                     </select>
+                   </td>
+
+
+                   
+                 </div>
+                 </div>
+                
+                </td>
+      </tr>
+    
+    </table>
+      </form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addConsommation()" >{{actionBtn}}</button>
+
+
+</div>

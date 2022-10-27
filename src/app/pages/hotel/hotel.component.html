@@ -1,0 +1,138 @@
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Hotel
+
+    </div>
+
+    <div class="page__content shadow p-3 position-relative">
+        <button mat-button color ="primary" (click)="openDialog()"><mat-icon>add</mat-icon> Add Hotel</button>      
+      <div class="page__content-data position-absolute text-center">
+
+
+        <!-- <table id="users" mdbTable mdbTableScroll scrollX="true" maxWidth="400">
+            <thead>
+            <tr>
+                <th >id</th>
+                <th >Hotel_name</th>
+                <th >adr1Hotel</th>
+               
+                <th >email</th>
+               
+                <th >sigleHotel</th>
+               
+                <th >telHotel</th>
+                <th  >Action</th>
+        
+            </tr>
+        </thead>
+        <tbody>
+          
+            <tr mdbTableCol *ngFor = "let row of hotel  "  >
+                <th scope="row">{{row.idHotel}}</th>
+              
+                <td> {{row.nomHotel}}</td>
+                <td>  {{row.adr1Hotel}}</td>
+               
+                 <td>{{row.email}}</td>
+               
+                 <td>    {{row.sigleHotel}}</td>
+                 <td>    {{row.telHotel}}</td>
+                 
+                 <td  >
+                     <button mat-icon-button color="primary" (click)="editHotel(row)">
+                         <mat-icon>edit</mat-icon>
+                     </button>
+                     <button (click)="deleteHotel(row.idHotel)" mat-icon-button color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                 </td>
+            </tr>
+        </tbody>
+          </table> -->
+
+          <div class="container">
+            <div style="margin-top: 10px">
+              <mat-form-field appearance="standard" style="width: 30%;">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+              </mat-form-field>
+              
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+              
+                  <!-- ID Column -->
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom Hotel </th>
+                    <td mat-cell *matCellDef="let row"> {{row.nomHotel}} </td>
+                  </ng-container>
+              
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="progress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Adresse 1 </th>
+                    <td mat-cell *matCellDef="let row"> {{row.adr1Hotel}} </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                    <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+                  </ng-container>
+              
+                  <!-- Fruit Column -->
+                  <ng-container matColumnDef="fruit">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombres de chambres</th>
+                    <td mat-cell *matCellDef="let row"> {{row.chambreHotel}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="etat">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> telHotel </th>
+                    <td mat-cell *matCellDef="let row"> {{row.telHotel}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="a">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Logo Hotel </th>
+                    <td mat-cell *matCellDef="let row"><a ><img class="card-img-top img-responsive"
+                      src = "{{this.hotelService.host+'/hotel/Imgarticles/'+row.idHotel}}" 
+                      style = "height :80px;width:fil-content"
+                     alt=""></a></td>                 
+                     </ng-container>
+
+                
+                  <ng-container matColumnDef="chef">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                    <td mat-cell *matCellDef="let row">                
+                       <button mat-icon-button color="primary" (click)="editHotel(row)">
+                      <mat-icon>edit</mat-icon>
+                  </button>
+                  <button  mat-icon-button color="warn" (click)="deleteHotel(row.idHotel)">
+                      <mat-icon>delete</mat-icon>
+                  </button> </td>
+                  </ng-container>
+                  <!-- <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+                    <td  >
+                      <button mat-icon-button color="primary" >
+                          <mat-icon>edit</mat-icon>
+                      </button>
+                      <button  mat-icon-button color="warn">
+                         <mat-icon>delete</mat-icon>
+                     </button>
+                  </td>
+                  </ng-container> -->
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              
+                  <!-- Row shown when there is no matching data. -->
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </table>
+              
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of chambre"></mat-paginator>
+              </div></div>
+          </div>
+
+          
+
+        
+</div>
+</div>
+</div>

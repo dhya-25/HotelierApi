@@ -1,0 +1,31 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    &__box {
+      min-height: 120px;
+      background: #5b81be;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+    &__content {
+      min-height: calc(120vh - 178px);
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 1rem;
+ 
+    }
+  }
+
+  .mat-form-field {
+    margin-top: 6px;
+    padding-right: 6px;
+    font-size: 11px;
+    width:112px !important;
+
+
+  }
+
+  

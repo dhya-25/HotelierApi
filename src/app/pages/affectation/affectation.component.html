@@ -1,0 +1,705 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Affectation</div>
+
+    <div class="page__content shadow p-3 position-relative">
+      <div>Etapes {{step}}/4</div>
+      <div class="page__content-data position-absolute text-center">
+
+            
+         
+   <form [formGroup]="ResidentForm"  novalidate>
+           
+        <table class="example-full-width" cellspacing="0">
+            <div *ngIf="step == 1">
+              <h1>Info Resident</h1>
+              <tr>
+
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nom Resident</mat-label>
+                <input formControlName="nom_resid" matInput>
+              </mat-form-field></td>
+  
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Code Nat</mat-label>
+                <input formControlName="cod_nat" matInput type="number" >
+               
+              </mat-form-field></td>
+  
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Arrivé</mat-label>
+                    <input formControlName="dat_naissance" matInput [matDatepicker]="pickeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeer></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>adr_res</mat-label>
+                  <textarea formControlName="adr_res" matInput placeholder="Ex. 100 Main St"></textarea>
+                </mat-form-field>
+                
+              </td>
+              
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>adr2_res</mat-label>
+                  <textarea formControlName="adr2_res" matInput placeholder="Ex. 100 Main St"></textarea>
+                </mat-form-field>
+                
+              </td>
+
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Numero passport</mat-label>
+                <input formControlName="num_pass" matInput  >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>num_voucher</mat-label>
+                <input formControlName="num_voucher" matInput  >
+               
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>profession</mat-label>
+                <input formControlName="profession" matInput >
+              </mat-form-field></td>
+
+ 
+
+
+
+             </tr>
+             <tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>num_cin</mat-label>
+                <input formControlName="num_cin" matInput >
+              </mat-form-field></td>  
+                 
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label> date_livr</mat-label>
+                    <input formControlName="date_livr" matInput [matDatepicker]="picker">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+
+
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>dern_serv</mat-label>
+                <input formControlName="dern_serv" matInput >
+              </mat-form-field></td>  
+
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Arrivé</mat-label>
+                    <input formControlName="date_arr" matInput [matDatepicker]="pickeeeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeeeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeeeer></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Depart</mat-label>
+                    <input formControlName="date_dep" matInput [matDatepicker]="pickeeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeeer></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>plafond_cred</mat-label>
+                <input formControlName="plafond_cred" matInput type="number">
+              </mat-form-field></td> 
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Numero Chambre</mat-label>
+                <input formControlName="num_chambre" matInput >
+              </mat-form-field></td> 
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label> nature</mat-label>
+                <input formControlName="nature" matInput >
+              </mat-form-field></td> 
+            </tr>
+            <tr>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>nb_bebe</mat-label>
+                <input formControlName="nb_bebe" matInput type="number">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>cod_resid_p</mat-label>
+                <input formControlName="cod_resid_p" matInput type="number">
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>h_depart</mat-label>
+                <input formControlName="h_depart" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>code_postal</mat-label>
+                <input formControlName="code_postal" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>ville</mat-label>
+                <input formControlName="ville" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>pays</mat-label>
+                <input formControlName="pays" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>offre</mat-label>
+                <input formControlName="offre" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>age</mat-label>
+                <input formControlName="age" matInput type="number" >
+              </mat-form-field></td>
+    
+
+            </tr>
+            <tr>
+              
+              <td>
+                <select name="Arrangement" class="form-control" formControlName="sexe">
+                  <option value="">Sexe </option>
+                  <option> Homme</option>
+                  <option> Femme</option>
+
+                 
+              
+                </select>
+              </td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>mint_remise</mat-label>
+                <input formControlName="mint_remise" matInput type="number" >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>type_remise</mat-label>
+                <input formControlName="type_remise" matInput  >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>lib_remise</mat-label>
+                <input formControlName="lib_remise" matInput>
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>type_client</mat-label>
+                <input formControlName="type_client" matInput >
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>code_resident</mat-label>
+                <input formControlName="code_resident" matInput>
+              </mat-form-field></td>
+
+              <td><p>
+                <mat-form-field appearance="outline">
+                    <mat-label>date_remise</mat-label>
+                    <input formControlName="date_remise" matInput [matDatepicker]="pickr">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickr"></mat-datepicker-toggle>
+                    <mat-datepicker #pickr></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+
+            </tr>
+            </div>
+            </table>
+          </form>
+
+          <form [formGroup]="ChambreForm"  novalidate> 
+<table>
+ 
+
+            <div *ngIf="step == 2">
+              <h1>Info Chambre</h1>
+                <tr>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nom Resident</mat-label>
+                    <input formControlName="nomResa" matInput>
+                  </mat-form-field></td>
+      
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Code ResaChambre</mat-label>
+                    <input formControlName="codeResaChambre" matInput type="number" >
+                   
+                  </mat-form-field></td>
+      
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Code Résident</mat-label>
+                    <input formControlName="codReas" matInput type="number" >
+                   
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nombre Adulte</mat-label>
+                    <input formControlName="nbrAdulte" matInput type="number" >
+                   
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Nombre Bébé</mat-label>
+                    <input formControlName="nbrbebe" matInput type="number" >
+                   
+                  </mat-form-field></td>
+                 
+                          
+                  
+      
+                  <td>
+                    <select name="Arrangement" class="form-control" formControlName="cod_categ">
+                      <option> cod_categ</option>
+                      <option *ngFor="let i of TCH"> {{i.codType}}</option>
+                  
+                    </select>
+                  </td>
+      
+      <td>
+        <select name="Arrangement" class="form-control" formControlName="arrangAdult" appearance="fill">
+            <option >arrangAdult</option>
+          <option *ngFor="let i of arrang"> {{i.codArrangement}}</option>
+      
+        </select>
+      </td>
+      <td>
+        <select name="Arrangement" class="form-control" formControlName="arrangBebe">
+            <option >arrangBebe</option>
+          <option *ngFor="let i of arrang"> {{i.codArrangement}}</option>
+      
+        </select>
+      </td>
+
+      
+                </tr>
+                <tr>
+      
+               
+                
+                <td><p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Arrivé</mat-label>
+                        <input formControlName="dateArr" matInput [matDatepicker]="pickeer">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                        <mat-datepicker #pickeer></mat-datepicker>
+                      </mat-form-field>
+                  </p></td>
+                  <td><p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Depart</mat-label>
+                        <input formControlName="dateDep" matInput [matDatepicker]="picker">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                  </p></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Numero Chambre</mat-label>
+                     <input formControlName="num_chambre" type="text" matInput>
+                    </mat-form-field></td>
+                    
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>code Vip</mat-label>
+                      <input formControlName="codeVip" type="text"  matInput>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>etat Res</mat-label>
+                      <textarea formControlName="etatRes" matInput></textarea>
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>nbrAdult_a</mat-label>
+                      <input formControlName="nbrAdult_a" matInput type="number" >
+                     
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>nbrEnfant_a</mat-label>
+                      <input formControlName="nbrEnfant_a" matInput type="number" >
+                     
+                    </mat-form-field></td>
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>nbrBebe_a</mat-label>
+                      <input formControlName="nbrBebe_a" matInput type="number" >
+                    </mat-form-field></td>
+       
+      
+                   
+              </tr>
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>commentaire</mat-label>
+                      <textarea formControlName="commentaire" matInput placeholder="Ex. 100 Main St"></textarea>
+                    </mat-form-field>
+                    
+                  </td>
+      
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>heureArr</mat-label>
+                    <input formControlName="heureArr" matInput  >
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>heureDep</mat-label>
+                    <input formControlName="heureDep" matInput  >
+                  </mat-form-field></td>
+      
+                  <td>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Remise</mat-label>
+                      <mat-select  formControlName="remise">
+                        <mat-option [value]="0" >non</mat-option>
+                        <mat-option [value]="1" >oui</mat-option>    
+                        </mat-select>
+                    </mat-form-field>
+                  </td>
+      
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Motif</mat-label>
+                    <textarea formControlName="motif" matInput></textarea>
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>prixUnitaire</mat-label>
+                    <input formControlName="prixUnitaire" matInput type="number" >
+                  </mat-form-field></td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>numFacture</mat-label>
+                    <input formControlName="numFacture" matInput type="number" >
+                  </mat-form-field></td>
+      
+                  <td><p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Facture</mat-label>
+                        <input formControlName="dateFacture" matInput [matDatepicker]="pickeeer">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="pickeeer"></mat-datepicker-toggle>
+                        <mat-datepicker #pickeeer></mat-datepicker>
+                      </mat-form-field>
+                  </p></td>
+      
+                 
+                </tr>
+                   <tr>
+                    <td>
+                      <mat-form-field appearance="fill">
+                        <mat-label>Offre</mat-label>
+                        <mat-select  formControlName="offre">
+                          <mat-option [value]="0" >non</mat-option>
+                          <mat-option [value]="1" >oui</mat-option>    
+                          </mat-select>
+                      </mat-form-field>
+                    </td>
+        
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Montant Remise</mat-label>
+                      <input formControlName="mntRemise" matInput type="number" >
+                    </mat-form-field></td>
+                   
+
+
+                    <td>
+                      <select name="Arrangement" class="form-control" formControlName="typeRemise">
+                        <option value=""> Type Remise</option>
+                        <option> Offre</option>
+                        <option> 50%</option>
+                        <option> Sans remise</option>
+
+                      </select>
+                    </td>
+        
+                      <td><mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Libelle Remise</mat-label>
+                        <input formControlName="libRemise"  matInput>
+                      </mat-form-field></td>
+        
+        
+                    
+                    <td><p>
+                      <mat-form-field appearance="outline">
+                          <mat-label>Date Remise</mat-label>
+                          <input formControlName="dateRemise" matInput [matDatepicker]="pickeeeer">
+                          <mat-hint>DD/MM/YYYY</mat-hint>
+                          <mat-datepicker-toggle matSuffix [for]="pickeeeer"></mat-datepicker-toggle>
+                          <mat-datepicker #pickeeeer></mat-datepicker>
+                        </mat-form-field>
+                    </p></td>
+      
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>User Remise</mat-label>
+                      <input formControlName="userRemise" matInput type="number" >
+                    </mat-form-field></td>
+
+
+
+                   </tr>
+                   <tr>
+
+                    <td><mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Code Hotel</mat-label>
+                      <input formControlName="cod_hotel" matInput  >
+                    </mat-form-field></td>
+<td>
+                    <div formGroupName="facture">
+                      <div class="form-group">
+                       <td>
+                           <select name="Arrangement" class="form-control" formControlName="idFacture">
+                             <option value=""> facture</option>
+                             <option *ngFor="let i of factures" value="{{i.idFacture}}"> {{i.numFactInd}}</option>
+                         
+                           </select>
+                         </td>
+                       </div>
+                       </div>
+                      </td>
+                       <td>
+                       <div formGroupName="resident">
+                        <div class="form-group">
+                         <td>
+                             <select name="Arrangement" class="form-control" formControlName="id_Resident">
+                               <option value=""> Resident</option>
+                               <option *ngFor="let i of resident" value="{{i.id_Resident}}"> {{i.nom_resid}}</option>
+                           
+                             </select>
+                           </td>
+                           
+                         </div>
+                         </div>
+                        </td>
+                </tr>
+            </div>
+          </table>
+          </form>
+          
+
+
+        <form [formGroup]="arrangementForm"  novalidate>
+            <table>
+            <div *ngIf="step == 3">
+              <h1>Arrangement</h1>
+
+              <tr>
+                  <td>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Code Arrangement</mat-label>
+                        <input formControlName="codArrangement" matInput  >
+                      </mat-form-field>
+                      
+                    </td>
+                    
+
+          
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Rang Arrangement</mat-label>
+                    <input formControlName="rangArrangement"  matInput type="number" >
+                   
+                  </mat-form-field></td>
+                   <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Lib Arrangement</mat-label>
+                    <input  formControlName="libArrangement" matInput  >
+
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Premier Service</mat-label>
+                    <input formControlName="premierService" matInput  >
+                  </mat-form-field></td>
+                  <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Dernier services</mat-label>
+                    <input formControlName="dernierService" matInput  >
+                  </mat-form-field></td>
+              </tr>
+              <tr>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>PDEJ</mat-label>
+                  <input formControlName="pdej" matInput type="number" >
+                 
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Dej</mat-label>
+                  <input formControlName="dej" matInput type="number" >
+                 
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Din</mat-label>
+                  <input formControlName="din" matInput type="number" >
+                 
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>All Inclusif</mat-label>
+                  <input formControlName="allInclusif" matInput type="number" >
+                 
+                </mat-form-field></td>
+                <div formGroupName="resident">
+                  <div class="form-group">
+                   <td>
+                       <select name="Arrangement" class="form-control" formControlName="id_Resident">
+                         <option> Resident</option>
+                         <option *ngFor="let i of resident" value="{{i.id_Resident}}"> {{i.id_Resident}}</option>
+                     
+                       </select>
+                     </td>
+                     
+                   </div>
+                   </div>
+              </tr>
+
+          </div>
+          </table>
+        </form>
+
+        <form [formGroup]="ReservationForm"  novalidate>
+            <table>
+            <div *ngIf="step == 4">
+              <h1>Reservation</h1>
+
+            
+                <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Reservation</mat-label>
+                        <input formControlName="date_res" matInput [matDatepicker]="hh">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="hh"></mat-datepicker-toggle>
+                        <mat-datepicker #hh></mat-datepicker>
+                      </mat-form-field>
+                    </td>
+                  <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Arrivée</mat-label>
+                        <input formControlName="date_arr" matInput [matDatepicker]="pickeeer">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="pickeeer"></mat-datepicker-toggle>
+                        <mat-datepicker #pickeeer></mat-datepicker>
+                      </mat-form-field>
+                </td>
+                  <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Depart</mat-label>
+                        <input formControlName="date_dep" matInput [matDatepicker]="bb">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="bb"></mat-datepicker-toggle>
+                        <mat-datepicker #bb></mat-datepicker>
+                      </mat-form-field>
+                  </td>
+
+          
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>commentaire </mat-label>
+                    <textarea formControlName="commentairee" matInput placeholder="Ex. 100 Main St"></textarea>
+                   
+                  </mat-form-field></td>
+
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label> heure_arr</mat-label>
+                    <input  formControlName="heure_arr" matInput  >
+
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label> heure_dep</mat-label>
+                    <input formControlName="heure_dep" matInput  >
+                  </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>aero_dep </mat-label>
+                    <input formControlName="aero_arr" matInput  >
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>vol_arr </mat-label>
+                    <input formControlName="vol_arr" matInput  >
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>aero_arr </mat-label>
+                    <input formControlName="aero_arr" matInput  >
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>vol_arr </mat-label>
+                    <input formControlName="aero_dep" matInput  >
+                  </mat-form-field>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>type_resa </mat-label>
+                    <input formControlName="type_resa" matInput  >
+                  </mat-form-field>
+
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>vol_dep </mat-label>
+                    <input formControlName="vol_dep" matInput  >
+                  </mat-form-field>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>remise_resa</mat-label>
+                  <input formControlName="remise_resa" matInput type="number" >
+                 
+                </mat-form-field></td>
+
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>etat_resa</mat-label>
+                    <input formControlName="etat_resa" matInput type="number" >
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>chef_groupe</mat-label>
+                  <input formControlName="chef_groupe" matInput  >
+                 
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>cod_user_creation</mat-label>
+                  <input formControlName="cod_user_creation" matInput type="number" >
+                 
+                </mat-form-field></td>
+                <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>cod_user_modification</mat-label>
+                    <input formControlName="cod_user_modification" matInput type="number" >
+                   
+                  </mat-form-field></td>
+                  <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Réservation Agence</mat-label>
+                        <input formControlName="date_resa_agence" matInput [matDatepicker]="picketter">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picketter"></mat-datepicker-toggle>
+                        <mat-datepicker #picketter></mat-datepicker>
+                      </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Modification</mat-label>
+                        <input formControlName="date_modification" matInput [matDatepicker]="vv">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="vv"></mat-datepicker-toggle>
+                        <mat-datepicker #vv></mat-datepicker>
+                      </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Date Création</mat-label>
+                        <input formControlName="date_crreation" matInput [matDatepicker]="aa">
+                        <mat-hint>DD/MM/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="aa"></mat-datepicker-toggle>
+                        <mat-datepicker #aa></mat-datepicker>
+                      </mat-form-field>
+                  </td>
+                  <td><mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>groupe</mat-label>
+                    <input formControlName="groupe" matInput  >
+                   
+                  </mat-form-field></td>
+              
+
+          </div>
+          </table>
+    
+        </form>
+
+
+        <div mat-dialog-actions >
+    <!-- <button type="submit"  *ngIf="step != 3" (click)="submit()">next</button> -->
+    <button mat-button color="warn" *ngIf="step != 1" (click)="previous()">previous </button>
+
+    <button mat-button color="primary" style="position: center;"  *ngIf="step == 2" (click)="addChambre()" ><mat-icon>add</mat-icon>Add</button>
+    <button mat-button color="primary" style="position: center;" *ngIf="step == 1" (click)="addResident()"><mat-icon>add</mat-icon>Add</button>
+    <button mat-button color="primary" style="position: center;" *ngIf="step == 3" (click)="addArrangement()"><mat-icon>add</mat-icon>Add</button>
+    <button mat-button color="primary" style="position: center;" *ngIf="step == 4" (click)="addReservation()"><mat-icon>add</mat-icon>Add</button>
+
+
+            </div>
+      </div>
+          </div>
+        </div>
+        

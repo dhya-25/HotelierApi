@@ -1,0 +1,15 @@
+<form >
+    <select name="Products" id="Products" class="form-control" >
+      <option value="">Numero facture</option>
+      <option *ngFor="let cat of facture" >
+          {{cat.numFactInd}}
+      </option>
+  </select>
+  
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="printerReportt()" >Imprimer</button>
+
+
+</div>
+</form>

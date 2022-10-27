@@ -1,0 +1,209 @@
+<h1 mat-dialog-title> {{nomDial}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="this.hotelService.dataForm"  (ngSubmit)="addData()">
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>Id Hotel</mat-label>
+            <input formControlName="idHotel" matInput type="number" readonly>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom Hotel</mat-label>
+            <input formControlName="nomHotel" matInput>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+          </mat-form-field></td>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Hotel Fax</mat-label>
+              <span matPrefix>+1 &nbsp;</span>
+              <input formControlName="faxHotel" type="tel" matInput placeholder="555-555-1234">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Hotel Telephone</mat-label>
+              <span matPrefix>+216 &nbsp;</span>
+              <input formControlName="telHotel" type="tel" matInput placeholder="555-555-1234">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+         </td>
+
+        </tr>
+        
+        <td><mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Matricule Fiscale</mat-label>
+          <input formControlName="matFiscale" matInput>
+        </mat-form-field></td>
+            <td>
+              <p>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Debut Saison</mat-label>
+                    <input formControlName="debSaisonHotel" matInput [matDatepicker]="pickeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeer></mat-datepicker>
+                  </mat-form-field>
+              </p></td>
+              <td>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Fin Saison</mat-label>
+                    <input formControlName="finSaisonHotel" matInput [matDatepicker]="picker">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </td>
+        
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre Chambre</mat-label>
+                <input formControlName="chambreHotel" matInput type="number" >
+               
+              </mat-form-field></td>
+              <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Nombre Lit</mat-label>
+                <input formControlName="litHotel" matInput type="number" >
+               
+              </mat-form-field></td>
+          
+
+    <tr>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Address</mat-label>
+              <textarea formControlName="adr1Hotel" matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+            </mat-form-field>
+            
+          </td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address 2</mat-label>
+            <textarea formControlName="adr2Hotel" matInput></textarea>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address 3</mat-label>
+            <textarea formControlName="adr3Hotel" matInput></textarea>
+          </mat-form-field></td>
+    </tr>
+
+       
+       <tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ccb1Hotel</mat-label>
+            <input formControlName="ccb1Hotel" matInput placeholder="Ex. San Francisco">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>ccb2Hotel</mat-label>
+            <input formControlName="ccb2Hotel" matInput >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>cptAvanceHotel</mat-label>
+            <input formControlName="cptAvanceHotel" matInput  >
+           
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>cptClientHotel</mat-label>
+            <input formControlName="cptClientHotel" matInput  >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>jorVenteHotel</mat-label>
+            <input formControlName="jorVenteHotel" matInput  >
+           
+          </mat-form-field></td>
+        </tr>
+
+    <tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>jorOdHotel</mat-label>
+            <input formControlName="jorOdHotel" matInput  >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>jorCaisseHotel</mat-label>
+            <input formControlName="jorCaisseHotel" matInput  >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>jorBanqueHotel</mat-label>
+            <input formControlName="jorBanqueHotel" matInput  >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>laisCaisseHotel</mat-label>
+            <input formControlName="laisCaisseHotel" matInput  >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>laisStandHotel</mat-label>
+            <input formControlName="laisStandHotel" matInput  >
+          </mat-form-field></td>
+    </tr>
+
+    <tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Sigle Hotel</mat-label>
+            <textarea formControlName="sigleHotel" matInput></textarea>
+          </mat-form-field></td>
+          
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Status</mat-label>
+            <textarea formControlName="statusHotel" matInput></textarea>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Reference Hotel</mat-label>
+            <textarea formControlName="refHotel" matInput></textarea>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>inputHotel</mat-label>
+            <input formControlName="inputHotel" matInput  >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>cptTransHotel</mat-label>
+            <input formControlName="cptTransHotel" matInput  >
+          </mat-form-field></td>
+    </tr>
+    <div class="form-group">
+      <label>File Upload  </label>
+          <input type="file" accept="image/*" (change)="onSelectFile($event)">
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary"  >{{actionBtn}}</button>
+
+
+</div>
+    </table>
+      </form>
+    
+</div>
+<!-- <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addHotel()" >{{actionBtn}}</button>
+
+
+</div> -->
+
+<!-- <form [formGroup]="this.hotelService.dataForm" (ngSubmit)="addData()">
+  <input type="hidden"  formControlName="idHotel" id="id">
+  
+  <div class="form-group">
+    <label>Code Article </label>
+    <input type="text" class="form-control" formControlName="nomHotel" id="code"  >
+  </div>
+  <div class="form-group">
+    <label>Code Barre </label>
+    <input type="text" class="form-control" formControlName="email" id="code_b"   >
+  </div>
+ 
+  <div class="form-group">
+      <label>File Upload  </label>
+          <input type="file" accept="image/*" (change)="onSelectFile($event)">
+          <img [src]="imgURL" height="200" *ngIf="imgURL">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+    <a class="btn btn-outline-success" routerLink="/articles"><i class="fa fa-plus-square"></i> Liste</a>
+  </div>
+</form> -->

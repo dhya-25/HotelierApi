@@ -1,0 +1,71 @@
+<h1 mat-dialog-title> {{nomDial}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="etatChambreForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id Etat</mat-label>
+            <input  formControlName="idEtatChambre" matInput="number" readonly>
+          </mat-form-field></td>
+
+          <td>
+            <select name="Arrangement" class="form-control" formControlName="codCateg">
+              <option value="">code Categ </option>
+              <option> SRGLE</option>
+              <option> DBPLE</option>
+              <option> TRPLE</option>
+              <option> QRPLE</option>
+
+            </select>
+          </td>
+          <td>
+            <select name="Arrangement" class="form-control" formControlName="etatChambre">
+              <option value=""> Etat chambre</option>
+              <option> hors service</option>
+              <option> sale</option>
+              <option> propre</option>
+
+            </select>
+          </td>
+        
+    
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Hotel</mat-label>
+            <input formControlName="codHotel" matInput >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Numéro Chambre</mat-label>
+            <input formControlName="numChambre" matInput>
+          </mat-form-field></td>
+          <td>
+            <div formGroupName="TypeChambre">
+              <div class="form-group">
+               <td>
+                   <select name="Arrangement" class="form-control" formControlName="idType">
+                     <option value=""> Chambre</option>
+                     <option *ngFor="let i of type" value="{{i.idType}}"> {{i.idType}}</option>
+                 
+                   </select>
+                 </td>
+                 
+               </div>
+               </div>
+
+        </tr>
+
+
+      
+    
+    </table>
+      </form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addEtat()" >{{actionBtn}}</button>
+
+
+</div>

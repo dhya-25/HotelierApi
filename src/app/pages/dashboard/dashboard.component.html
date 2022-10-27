@@ -1,0 +1,68 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Dashboard</div>
+
+    <div class="page__content shadow p-3 position-relative">
+<!-- /.content -->
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-primary text-white mb-4">
+                <div class="card-body">
+                    <h4>Total Residents : {{totalResid}}</h4>                 
+                </div>
+    <!--             <div class="card-footer d-flex align-items-center justify-content-between">
+
+                </div> -->
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-success text-white mb-4">
+                <div class="card-body">
+                        <h4>Total Chambres : {{totalChambre}} </h4>
+                </div>
+             <!--    <div class="card-footer d-flex align-items-center justify-content-between">
+
+                </div> -->
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+            <div class="card bg-danger text-white mb-4">
+                <div class="card-body" style="text-align: center;padding: 0.65rem;">
+                    <h4 style="margin-bottom: 0px;">{{today | date:'MMMM d, y': undefined : 'fr'}} </h4>
+                    <label style="font-size: 18px;margin-bottom: 0px !important;">{{dateToday}} </label>     
+                 
+                    <!--         <h4>Date : {{today | date:'fullDate': undefined : 'fr'}} </h4>          -->           
+                </div> 
+          <!--       <div class="card-footer d-flex align-items-center justify-content-between">
+
+                </div> -->
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="pi pi-chart-line" style="font-size: 1rem;"></i> Nombre de résident par nationalité 
+                </div>
+                <div class="card-body">
+                    <app-chart-overview></app-chart-overview>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="pi pi-chart-bar" style="font-size: 1rem;"></i> Occupation par etat chambre
+                </div>
+                <div class="card-body">
+                    <app-occupation-par-categ></app-occupation-par-categ>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div></div>

@@ -1,0 +1,125 @@
+<h1 mat-dialog-title> {{nomDial}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="agenceForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id Agence</mat-label>
+            <input  formControlName="idAgence" matInput="number">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom Agence</mat-label>
+            <input formControlName="nomAgence" matInput>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Agence</mat-label>
+            <input formControlName="codAgence" matInput>
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput>
+          </mat-form-field></td>
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label> Fax Agence</mat-label>
+              <span matPrefix>+1 &nbsp;</span>
+              <input formControlName="faxAgence" type="tel" matInput placeholder="555-555-1234">
+            </mat-form-field>
+          </td>
+
+        </tr>
+
+             
+      
+
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Telephone Agence</mat-label>
+          <span matPrefix>+216 &nbsp;</span>
+          <input formControlName="telAgence" type="tel" matInput placeholder="555-555-1234">
+        </mat-form-field>
+     </td>
+
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Etat Agence</mat-label>
+        <input formControlName="etatAgence" matInput>
+      </mat-form-field></td>
+        <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Address</mat-label>
+              <textarea formControlName="adrOne_Agence" matInput ></textarea>
+            </mat-form-field>
+            
+          </td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address 2</mat-label>
+            <textarea formControlName="adrTwo_Agence" matInput></textarea>
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Address 3</mat-label>
+            <textarea formControlName="adrTree_Agence" matInput></textarea>
+          </mat-form-field></td>
+    </tr>
+
+       
+       <tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Representant</mat-label>
+            <input formControlName="representant" matInput >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>DomiAgence</mat-label>
+            <input formControlName="domiAgence" matInput >
+          </mat-form-field></td>
+          <!-- <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Type Agence</mat-label>
+            <input formControlName="typeAgence" matInput  >
+           
+          </mat-form-field></td> -->
+<select name="Type" class="form-control" formControlName="typeAgence" style="width: 50%;">
+  <option value="">Type Agence</option>
+  <option value="Agence">Agence</option>
+  <option value="Agence Individuel">Agence Individuel</option>
+</select>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Site Web</mat-label>
+            <textarea formControlName="siteWeb" matInput></textarea>
+          </mat-form-field></td>
+
+
+        </tr>
+    <tr>
+        <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom Comercial</mat-label>
+            <input formControlName="nomComercial" matInput type="text" >
+           
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Pays Agence</mat-label>
+            <input formControlName="paysAgence" matInput type="text" >
+           
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Province Agence</mat-label>
+            <input formControlName="provinceAgence" matInput type="text" >
+           
+          </mat-form-field></td>
+
+          
+      
+    </tr>
+    
+    </table>
+      </form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addAgence()" >{{actionBtn}}</button>
+
+
+</div>

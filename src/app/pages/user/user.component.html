@@ -1,0 +1,32 @@
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Contrat Agence
+
+    </div>
+
+    <div class="page__content shadow p-3 position-relative">
+        <button mat-button color ="primary" (click)="openDialog()">Add Contrat Agence</button>      
+      <div class="page__content-data position-absolute text-center">
+        <table id="users" mdbTable mdbTableScroll scrollX="true" maxWidth="400">
+            <thead>
+            <tr>
+                <th >id</th>
+                <th >Code Tarif</th>
+               
+        
+            </tr>
+        </thead>
+        <tbody>
+          
+            <tr mdbTableCol *ngFor = "let row of util  "  >
+                <th scope="row">{{row.username}</th>
+              
+                <td> {{row.password}</td>
+               
+                 
+            </tr>
+        </tbody>
+          </table>
+          </div>
+          </div>
+        </div>

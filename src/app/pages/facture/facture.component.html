@@ -1,0 +1,152 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Facture</div>
+  
+     
+
+
+
+  
+          <div  class="content-section implementation">
+            <div class="card">
+              <div class="page__content shadow p-3 position-relative">
+                <button mat-button  color ="primary" (click)="openAjoutEtat()" > <mat-icon>add</mat-icon>Add Facture</button>
+                <button mat-button color ="primary" (click)="openImprimer()" > <mat-icon>print</mat-icon>  
+                </button>  
+
+             
+      <!-- <mat-form-field appearance="standard">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      </mat-form-field> -->
+     
+
+      <!-- <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>N Facture</mat-label>
+        <input  matInput  >
+       
+      </mat-form-field>
+      <button mat-button color="primary"  (click)="printerReport()">report</button> -->
+      <!-- <div class="row">
+
+        <form >
+          <select name="Products" id="Products" class="form-control" >
+            <option value="">Numero facture</option>
+            <option *ngFor="let cat of facture" >
+                {{cat.numFactInd}}
+            </option>
+        </select>
+        </form>
+        <button mat-icon-button color="primary"  (click)="printerReport()" >
+           Telecharger
+        </button>
+        
+    </div> -->
+
+      
+    <!-- <table id="users" mdbTable mdbTableScroll scrollX="true" maxWidth="400">
+      <thead>
+      <tr>
+          <th >numFactInd</th>
+          <th >promotion</th>
+          <th >typeFacture</th>
+         
+          <th >commentaire</th>
+         
+      
+         
+          
+  
+      </tr>
+  </thead>
+  <tbody>
+    
+      <tr mdbTableCol *ngFor = "let row of facture  "  >
+          <th scope="row">{{row.numFactInd}}</th>
+        
+          <td> {{row.promotion}}</td>
+          <td>  {{row.typeFacture}}</td>
+         
+           <td>{{row.commentaire}}</td>
+         
+           
+
+      </tr>
+  </tbody>
+    </table> -->
+
+    <div class="container">
+      <div style="margin-top: 10px">
+        <mat-form-field appearance="standard" style="width: 30%;">
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+        </mat-form-field>
+        
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort>
+        
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> numFactInd </th>
+              <td mat-cell *matCellDef="let row"> {{row.numFactInd}} </td>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="progress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> promotion </th>
+              <td mat-cell *matCellDef="let row"> {{row.promotion}} </td>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> typeFacture </th>
+              <td mat-cell *matCellDef="let row"> {{row.typeFacture}} </td>
+            </ng-container>
+        
+            <!-- Fruit Column -->
+            <ng-container matColumnDef="fruit">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> commentaire </th>
+              <td mat-cell *matCellDef="let row"> {{row.commentaire}} </td>
+            </ng-container>
+            <ng-container matColumnDef="etat">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> mntHtax </th>
+              <td mat-cell *matCellDef="let row"> {{row.mntHtax}} </td>
+            </ng-container>
+            <ng-container matColumnDef="chef">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">                  
+                <button mat-icon-button color="primary"  >
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button  mat-icon-button color="warn" (click)="deleteFacture(row.idFacture)">
+                <mat-icon>delete</mat-icon>
+            </button> </td> 
+            </ng-container>
+            <!-- <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+              <td  >
+                <button mat-icon-button color="primary" >
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button  mat-icon-button color="warn">
+                   <mat-icon>delete</mat-icon>
+               </button>
+            </td>
+            </ng-container> -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of chambre"></mat-paginator>
+        </div></div>
+    </div>
+    
+  </div>
+  </div>
+  </div>
+  
+  

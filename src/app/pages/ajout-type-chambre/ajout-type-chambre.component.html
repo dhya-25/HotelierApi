@@ -1,0 +1,252 @@
+<h1 mat-dialog-title> Add Type Chambre</h1>
+<div mat-dialog-content>
+    <form [formGroup]="typeChForm"  novalidate >
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Id Category</mat-label>
+            <input formControlName="idType" matInput type="number">
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Category</mat-label>
+            <input formControlName="code_categ" matInput>
+          </mat-form-field></td>
+
+
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Television</mat-label>
+              <mat-select  formControlName="television">
+                <mat-option>--Select--</mat-option>
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>miniBar</mat-label>
+              <mat-select  formControlName="miniBar">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Climatisieur</mat-label>
+              <mat-select  formControlName="climant">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Coffren</mat-label>
+              <mat-select  formControlName="coffren">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+
+             
+      
+
+    <tr>
+
+         
+
+
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Douche Bain</mat-label>
+              <mat-select  formControlName="douchBain">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Grand Lit</mat-label>
+              <mat-select  formControlName="grandLit">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+  
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Distance</mat-label>
+              <mat-select  formControlName="distance">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+  
+              </mat-select>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Communic</mat-label>
+              <mat-select formControlName="communic">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+  
+              </mat-select>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Balcon</mat-label>
+              <mat-select  formControlName="balcon">
+                <mat-option [value]="0" >non</mat-option>
+                <mat-option [value]="1" >oui</mat-option>
+  
+              </mat-select>
+            </mat-form-field>
+          </td>
+ 
+
+  <td>
+    <mat-form-field appearance="fill">
+      <mat-label>Vue</mat-label>
+      <mat-select  formControlName="vue">
+        <mat-option [value]="0" >non</mat-option>
+        <mat-option [value]="1" >oui</mat-option>    
+        </mat-select>
+    </mat-form-field>
+  </td>
+  
+  
+  <td>
+    <mat-form-field appearance="fill">
+      <mat-label>soleil</mat-label>
+      <mat-select  formControlName="soleil">
+        <mat-option [value]="0" >non</mat-option>
+        <mat-option [value]="1" >oui</mat-option>    
+        </mat-select>
+    </mat-form-field>
+  </td>
+
+  <td>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Nombres de Lits</mat-label>
+      <input formControlName="nbLits" matInput type="number" >
+
+    </mat-form-field>
+    
+  </td>
+    </tr>
+
+       
+
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Salon</mat-label>
+          <mat-select  formControlName="salon">
+            <mat-option [value]="0" >non</mat-option>
+            <mat-option [value]="1" >oui</mat-option>    
+            </mat-select>
+        </mat-form-field>
+      </td>
+         
+          <td>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Ordres</mat-label>
+              <input formControlName="ordre" matInput type="number" >
+
+            </mat-form-field>
+            
+          </td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Classe 1</mat-label>
+            <input formControlName="codClasse1" matInput type="text" >
+           
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Classe 2</mat-label>
+            <input formControlName="codClasse2" matInput type="text" >
+           
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Code Hotel</mat-label>
+            <input formControlName="cod_hotel" matInput type="text" >
+           
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Commentaire</mat-label>
+            <textarea formControlName="commentaire" matInput></textarea>
+          </mat-form-field></td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>telephone</mat-label>
+          <mat-select  formControlName="telephone">
+            <mat-option [value]="0" >non</mat-option>
+            <mat-option [value]="1" >oui</mat-option>    
+            </mat-select>
+        </mat-form-field>
+      </td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Tel</mat-label>
+      <input formControlName="tel" matInput type="text" >
+    </mat-form-field></td>
+    <td><mat-form-field class="example-full-width" appearance="fill">      
+      <mat-label>Code Type</mat-label>
+      <input formControlName="codType" matInput type="text" >
+     
+    </mat-form-field></td>
+<td><mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Code Aile</mat-label>
+  <input formControlName="codAlie" matInput type="text" >
+ 
+</mat-form-field></td>
+<td><mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>communiquante</mat-label>
+  <input formControlName="communiquante" matInput type="text" >
+ 
+</mat-form-field></td>
+<div formGroupName="chambre">
+  <div class="form-group">
+   <td>
+       <select name="Arrangement" class="form-control" formControlName="idChambre">
+         <option value=""> Chambre</option>
+         <option *ngFor="let i of chambre" value="{{i.idChambre}}"> {{i.idChambre}}</option>
+     
+       </select>
+     </td>
+     
+   </div>
+   </div>
+     
+   
+    </tr>
+    
+    </table>
+      </form>
+    
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addTypeChambre()" >{{actionBtn}}</button>
+
+
+</div>

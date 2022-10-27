@@ -1,0 +1,59 @@
+
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">
+        <p class="font-italic">
+            Entre Sortie
+        </p> </div>
+
+    <div class="page__content shadow p-3 position-relative">
+        
+        <button mat-button color ="primary" (click)="printerReportES()" ><mat-icon>print</mat-icon> Imprimer</button>      
+      <div class="page__content-data position-absolute text-center">
+
+
+       
+          <div class="container">
+            <div style="margin-top: 10px">
+              <mat-form-field appearance="standard" style="width: 30%;">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+              </mat-form-field>
+              
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+              
+                  <!-- ID Column -->
+                  <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom résident </th>
+                    <td mat-cell *matCellDef="let row"> {{row.nom_resid}} </td>
+                  </ng-container>
+              
+                  <!-- Progress Column -->
+                  <ng-container matColumnDef="progress">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date entré </th>
+                    <td mat-cell *matCellDef="let row"> {{row.date_arr}} </td>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> date sortie </th>
+                    <td mat-cell *matCellDef="let row"> {{row.date_dep}} </td>
+                  </ng-container>
+              
+                  
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              
+                  <!-- Row shown when there is no matching data. -->
+                  <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                  </tr>
+                </table>
+              
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of chambre"></mat-paginator>
+              </div></div>
+          </div>
+
+</div>
+</div>
+</div>

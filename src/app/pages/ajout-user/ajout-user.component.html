@@ -1,0 +1,121 @@
+<h1 mat-dialog-title>Ajout Utilisateur</h1>
+<div mat-dialog-content>
+    <form [formGroup]="utilForm"  novalidate>
+
+      
+        <table class="example-full-width" cellspacing="0"><tr>
+
+
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>username</mat-label>
+            <input formControlName="username" matInput >
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>password</mat-label>
+            <input formControlName="password" matInput >
+          </mat-form-field></td>
+        
+    
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>matPers</mat-label>
+            <input formControlName="matPers" matInput  >
+          </mat-form-field></td>
+
+          <td><mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>dureeAcc</mat-label>
+            <input formControlName="dureeAcc" matInput type="number">
+          </mat-form-field></td>
+          <td>
+           
+
+        </tr>
+
+        <tr>
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>adresse</mat-label>
+              <input  formControlName="adresse" matInput >
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>tel</mat-label>
+              <input formControlName="tel" matInput >
+            </mat-form-field></td>
+            
+          
+              <td>
+                <mat-form-field appearance="outline">
+                    <mat-label> dateDep</mat-label>
+                    <input formControlName="dateDeb" matInput [matDatepicker]="pickeer">
+                    <mat-hint>DD/MM/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="pickeer"></mat-datepicker-toggle>
+                    <mat-datepicker #pickeer></mat-datepicker>
+                  </mat-form-field>
+              </td>
+
+            <td><mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>cin</mat-label>
+              <input formControlName="cin" matInput >
+            </mat-form-field></td>
+  
+            <td><mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>ref</mat-label>
+                <input formControlName="ref" matInput >
+              </mat-form-field></td>
+             
+              <div formGroupName="role">
+                <div class="form-group">
+                 <!-- <td>
+                     <select name="Arrangement" class="form-control" >
+                       <option> role Id</option>
+                       <option *ngFor="let i of role" value="{{i.id}}"> {{i.name}}</option>
+                   
+                     </select>
+                   </td> -->
+
+                   <!-- <h4>mat-select</h4>
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select [(ngModel)]="ng" name="food">
+      <mat-option > ROLE_USER</mat-option>
+      <mat-option > ROLE_MODERATOR</mat-option>
+      <mat-option > ROLE_ADMIN</mat-option>
+
+    </mat-select>
+  </mat-form-field> -->
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Television</mat-label>
+    <mat-select  [(ngModel)]="ng">
+      <mat-option>--Select--</mat-option>
+      <mat-option  >ROLE_USER</mat-option>
+      <mat-option  >ROLE_MODERATOR</mat-option>
+      <mat-option  >ROLE_ADMIN</mat-option>
+
+    </mat-select>
+  </mat-form-field> -->
+  <mat-form-field appearance="fill">
+    <mat-label>Role</mat-label>
+    <mat-select [formControl]="ng" multiple>
+      <mat-option  >ROLE_USER</mat-option>
+      <mat-option  >ROLE_MODERATOR</mat-option>
+      <mat-option  >ROLE_ADMIN</mat-option>    </mat-select>
+  </mat-form-field>
+
+  
+                 </div>
+                 </div>
+          </tr>
+          
+     
+    </table>
+      </form>
+      
+      <!-- {{utilForm.value | json}} -->
+
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addUtilisateur()" >Save</button>
+
+
+</div>
